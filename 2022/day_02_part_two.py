@@ -26,7 +26,7 @@ def isin(string, array):
             return True
     return False
 
-with open("input_day_two.txt", "r+") as file1:
+with open("input_day_02.txt", "r+") as file1:
 
     score=0
     for line in file1:
