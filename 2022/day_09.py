@@ -74,7 +74,7 @@ def switch(dir):
         return 0, 1
     return -1
 
-with open("input_test_day_nine.txt", "r+") as file1:
+with open("input_test_day_09.txt", "r+") as file1:
 
     count = 0
 
