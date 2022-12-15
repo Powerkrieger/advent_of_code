@@ -7,7 +7,7 @@ def unique(list1, sign_length):
         return False
 
 
-with open("input_day_six.txt", "r+") as file1:
+with open("input_day_06.txt", "r+") as file1:
 
     buffer = []
     for line in file1:
