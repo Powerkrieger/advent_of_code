@@ -2,6 +2,7 @@ if __name__ == "__main__":
     with open("input02.txt") as file:
         df = file.readlines()
         sum_ids = 0
+        sum_power = 0
         max_green, max_red, max_blue = 13, 12, 14
         for line in df:
             games = line.split(";")
@@ -26,13 +27,19 @@ if __name__ == "__main__":
                         _, new_blue, _ = cube.split(" ")
                         if int(new_blue) > blue:
                             blue = int(new_blue)
-                if green > max_green or red > max_red or blue > max_blue:
-                    skip = True
-                    break
+                # if green > max_green or red > max_red or blue > max_blue:
+                #     skip = True
+                #     break
+
+            power = green * red * blue
+            if power <= 0:
+                print("wild")
+
+            sum_power += power
 
             if not skip:
                 sum_ids += int(id)
 
             # print(f"id: {id}, game1 {game1} should be included in games{games}")
 
-        print(sum_ids)
+        print(sum_power)
