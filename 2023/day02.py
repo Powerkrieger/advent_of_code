@@ -1,5 +1,5 @@
 if __name__ == "__main__":
-    with open("input02.txt") as file:
+    with open("inputs/input02.txt") as file:
         df = file.readlines()
         sum_ids = 0
         sum_power = 0

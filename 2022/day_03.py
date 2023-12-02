@@ -4,7 +4,7 @@ def isin(string, array):
             return True
     return False
 
-with open("input_day_03.txt", "r+") as file1:
+with open("inputs/input_day_03.txt", "r+") as file1:
     sum = 0
     for line in file1:
         size = len(line.strip())//2

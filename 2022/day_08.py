@@ -45,7 +45,7 @@ def scene(forest, x, y, row_edge, col_edge):
 
 
 
-with open("input_day_08.txt", "r+") as file1:
+with open("inputs/input_day_08.txt", "r+") as file1:
 
     forest = []
     row = 0

@@ -1,4 +1,4 @@
-with open("input_day_01.txt", "r+") as file1:
+with open("inputs/input_day_01.txt", "r+") as file1:
     max1 = 0
     max2 = 0
     max3 = 0

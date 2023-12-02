@@ -6,7 +6,7 @@ def starting_here(word, numbers):
 
 
 if __name__ == "__main__":
-    with open("input01.txt") as file:
+    with open("inputs/input01.txt") as file:
         df = file.readlines()
 
         numbers = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]

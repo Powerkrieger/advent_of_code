@@ -35,7 +35,7 @@ def looong(a,b,x,y):
         return False
 
 
-with open("input_day_04.txt", "r+") as file1:
+with open("inputs/input_day_04.txt", "r+") as file1:
 
 
     counter = 0

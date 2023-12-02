@@ -61,7 +61,7 @@ class Node:
                 all_dirs.append([data.size, data.dir])
         return all_dirs
 
-with open("input_day_07.txt", "r+") as file1:
+with open("inputs/input_day_07.txt", "r+") as file1:
     root = Node("/")
     active = root
     sum = 0
