@@ -1,9 +1,2 @@
 # advent_of_code
-my efforts at solving advent of code challenges. Enjoy.
-
-              _                 _            __    _____          _      
-     /\      | |               | |          / _|  / ____|        | |     
-    /  \   __| |_   _____ _ __ | |_    ___ | |_  | |     ___   __| | ___ 
-   / /\ \ / _` \ \ / / _ \ '_ \| __|  / _ \|  _| | |    / _ \ / _` |/ _ \
-  / ____ \ (_| |\ V /  __/ | | | |_  | (_) | |   | |___| (_) | (_| |  __/
- /_/    \_\__,_| \_/ \___|_| |_|\__|  \___/|_|    \_____\___/ \__,_|\___|                                                                 
+my efforts at solving advent of code challenges. Enjoy.                                          
