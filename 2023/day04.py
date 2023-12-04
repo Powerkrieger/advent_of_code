@@ -1,7 +1,10 @@
+from itertools import count
+
 if __name__ == "__main__":
     with open("inputs/input04.txt") as file:
         df = file.readlines()
         answer = 0
+        copy_of = []
         for line in df:
             card, winning_numbers = line.split("|")
             card_id, numbers = card.split(":")
@@ -9,11 +12,16 @@ if __name__ == "__main__":
             numbers = [x for x in numbers.split(" ") if x != '']
             winning_numbers = [x for x in winning_numbers.split(" ") if x != '']
             winning_numbers[-1] = winning_numbers[-1].replace("\n", "")
-            print(f"card with id {id}, {numbers} and winning ns {winning_numbers}")
+
+            copy_of.append(int(id))
 
             power = len([x for x in numbers if x in winning_numbers])
-            print(power)
-            if power > 0:
-                answer += 2**(power-1)
+            if power <= 0:
+                continue
+            count_of_copies = len([x for x in copy_of if x == int(id)])
+            for _ in range(count_of_copies):
+                for i in range(1, power+1):
+                    copy_of.append(int(id)+i)
 
+        answer = len(copy_of)
         print(f"answer: {answer}")
