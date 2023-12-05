@@ -1,6 +1,9 @@
 import sys
 import time
 
+"""
+had to add some whitespace at the end of the input .... dunno 
+"""
 
 def transfer_to_dest(source, val, dest):
     return dest + val - source
