@@ -5,8 +5,8 @@ def main():
     with open("inputs/input06.txt") as file:
         df = file.readlines()
         answer = 1
-        time = [int(x) for x in df[0][5:-1].split(" ") if x != '']
-        dist = [int(x) for x in df[1][9:-1].split(" ") if x != '']
+        time = [int(df[0][5:-1].replace(" ", ""))]
+        dist = [int(df[1][9:-1].replace(" ", ""))]
         print(time)
         print(dist)
 
