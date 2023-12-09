@@ -10,10 +10,10 @@ def new_seq_check_zero(old_seq):
         if new_seq[-1] != 0:
             all_zeros = False
     if all_zeros:
-        return old_seq[-1]
+        return old_seq[0]
     else:
-        last_value_of_row_below = new_seq_check_zero(new_seq)
-        return last_value_of_row_below + old_seq[-1]
+        first_value_of_row_below = new_seq_check_zero(new_seq)
+        return old_seq[0] - first_value_of_row_below
 
 
 def main():
