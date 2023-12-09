@@ -15,7 +15,7 @@ def go_until_z(node, network, lr_sequence, seq_i=0):
 
 
 def main():
-    with open("inputs/input08.txt") as file:
+    with open("../inputs/input08.txt") as file:
         puzzle = file.readlines()
         answer = []
 
