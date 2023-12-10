@@ -1,18 +1,6 @@
 import math
 import time
 
-import numpy as np
-
-
-def go_until_z(node, network, lr_sequence, seq_i=0):
-    seq_length = len(lr_sequence)
-    steps = 0
-    while node[2] != "Z":
-        seq_i = seq_i % seq_length
-        node = network[node][lr_sequence[seq_i]]
-        seq_i += 1
-    return seq_i
-
 
 def main():
     with open("../inputs/input08.txt") as file:
@@ -31,7 +19,6 @@ def main():
         print(network)
 
         sequences = {}
-        # !!!! wont work, not necessarily circles !!!!
         loop_offset_lengths = [[0, 0] for _ in x_nodes]
         print(loop_offset_lengths)
         seq_length = len(lr_sequence)
@@ -39,10 +26,9 @@ def main():
             seq_i = 0
             steps = 0
             visited = [(starting_node, seq_i)]
-            next_node = (network[starting_node][lr_sequence[seq_i]], seq_i+1)
+            next_node = (network[starting_node][lr_sequence[seq_i]], seq_i + 1)
             seq_i += 1
             while next_node not in visited:
-                # print(visited)
                 seq_i = seq_i % seq_length
                 seq_i_plus = seq_i + 1 % seq_length
                 visited.append(next_node)
@@ -67,7 +53,6 @@ def main():
         for key in sequences.keys():
             print(f"sequence with {key}, length {len(sequences[key])}")
             for z_index, (node, i) in enumerate(sequences[key]):
-                #print(node)
                 if node[2] == "Z":
                     print(f"hooray, {z_index}")
                     continue
