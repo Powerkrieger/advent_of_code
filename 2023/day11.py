@@ -8,7 +8,7 @@ def main():
         answer = 0
         space = []
         galaxies = []
-        factor = 1
+        factor = 1000000 - 1
 
         # read in space and expand in y direction
         rows_to_be_expanded = []
