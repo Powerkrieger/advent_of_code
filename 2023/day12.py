@@ -64,6 +64,25 @@ def main():
             numbers = [int(x) for x in numbers.split(",")]
             springs = [0 if v == "." else 1 if v == "#" else 2 for v in springs]
 
+            # part 2
+            new_springs = []
+            new_numbers = []
+            for x in springs:
+                new_springs.append(x)
+            for x in numbers:
+                new_numbers.append(x)
+            for i in range(4):
+                new_springs.append(2)
+                for x in springs:
+                    new_springs.append(x)
+                for x in numbers:
+                    new_numbers.append(x)
+            springs = new_springs
+            numbers = new_numbers
+
+            print(springs)
+            print(numbers)
+
             max_length = len(springs)
             permutations = recursive_function(0, numbers, springs, max_length)
             print(f"working permutations for this run: {permutations}")
