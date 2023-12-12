@@ -1,6 +1,5 @@
 import time
 
-
 def can_position_group_here(starting_position, group_size, springs, max_length):
     if starting_position > 0 and springs[starting_position-1] == 1:
         return False
@@ -29,10 +28,13 @@ def hashtags_missed(starting_position, end, springs):
     return False
 
 
-def recursive_function(starting_position, numbers, springs, max_length):
+def recursive_function(starting_position, numbers, springs, max_length, cache):
+    if (starting_position, numbers) in cache:
+        return cache[(starting_position, numbers)]
     answer = 0
     if len(numbers) <= 0 and no_hashtags_left(starting_position, springs, max_length):
-        return 1
+        answer = 1
+        pass
     elif len(numbers) <= 0:
         pass
     elif starting_position >= max_length:
@@ -42,16 +44,17 @@ def recursive_function(starting_position, numbers, springs, max_length):
             if hashtags_missed(starting_position, i, springs):
                 break
             elif len(numbers) <= 0 and no_hashtags_left(starting_position, springs, max_length):
-                return answer + 1
+                answer += 1
+                break
             elif len(numbers) <= 0:
                 break
             elif can_position_group_here(i, numbers[0], springs, max_length):
-                copy_numbers = numbers.copy()
-                g = copy_numbers.pop(0)
+                g = numbers[0]
                 new_starting_position = i + g + 1
-                answer += recursive_function(new_starting_position, copy_numbers, springs, max_length)
+                answer += recursive_function(new_starting_position, numbers[1:], springs, max_length, cache)
             elif springs[i] == 1:
                 break
+    cache[(starting_position, numbers)] = answer
     return answer
 
 
@@ -80,11 +83,8 @@ def main():
             springs = new_springs
             numbers = new_numbers
 
-            print(springs)
-            print(numbers)
-
             max_length = len(springs)
-            permutations = recursive_function(0, numbers, springs, max_length)
+            permutations = recursive_function(0, tuple(numbers), springs, max_length, {})
             print(f"working permutations for this run: {permutations}")
             answer += permutations
 
